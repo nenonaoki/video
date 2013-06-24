@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<head>
+<meta charset="utf-8">
+<title></title>
+<meta name="description" content="">
+<meta name="viewport" content="width=device-width">
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<link href="http://vjs.zencdn.net/4.0/video-js.css" rel="stylesheet">
+<script src="http://vjs.zencdn.net/4.0/video.js"></script>
+<script src="js/vendor/vjs.youtube.js"></script>
+<style>
+body {
+padding-top: 60px;
+padding-bottom: 40px;
+}
+</style>
+<link rel="stylesheet" href="css/bootstrap-responsive.min.css">
+<link rel="stylesheet" href="css/main.css">
+
+<script src="js/vendor/modernizr-2.6.2.min.js"></script>
+</head>
+<body>
+
+<!-- This code is taken from http://twitter.github.com/bootstrap/examples/hero.html -->
+
+<div class="navbar navbar-inverse navbar-fixed-top">
+<div class="navbar-inner">
+<div class="container">
+<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+</a>
+<a class="brand" href="#">Project name</a>
+<div class="nav-collapse collapse">
+<ul class="nav">
+<li class="active"><a href="#">Home</a></li>
+<li><a href="#about">About</a></li>
+<li><a href="#contact">Contact</a></li>
+<li class="dropdown">
+<a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+<ul class="dropdown-menu">
+<li><a href="#">Action</a></li>
+<li><a href="#">Another action</a></li>
+<li><a href="#">Something else here</a></li>
+<li class="divider"></li>
+<li class="nav-header">Nav header</li>
+<li><a href="#">Separated link</a></li>
+<li><a href="#">One more separated link</a></li>
+</ul>
+</li>
+</ul>
+<form class="navbar-form pull-right">
+<input class="span2" type="text" placeholder="Email">
+<input class="span2" type="password" placeholder="Password">
+<button type="submit" class="btn">Sign in</button>
+</form>
+</div><!--/.nav-collapse -->
+</div>
+</div>
+</div>
+
+<div class="container">
+
+<!-- Main hero unit for a primary marketing message or call to action -->
+<div class="hero-unit">
+<h1>Hello, video!</h1>
+
+<!-- Start of Brightcove Player -->
+
+<div style="display:none">
+
+</div>
+
+<!--
+By use of this code snippet, I agree to the Brightcove Publisher T and C 
+found at https://accounts.brightcove.com/en/terms-and-conditions/. 
+-->
+
+<script type="text/javascript" src="http://admin.brightcove.co.jp/js/BrightcoveExperiences.js"></script>
+<object id="myExperience525758989002" class="BrightcoveExperience">
+<param name="bgcolor" value="#FFFFFF" />
+<param name="width" value="486" />
+<param name="height" value="412" />
+<param name="playerID" value="526524817002" />
+<param name="playerKey" value="AQ~~,AAAAepdQCVo~,CkhkBGz1xPqnhFV-BcV3R_4e0cfyKipK" />
+<param name="isVid" value="true" />
+<param name="dynamicStreaming" value="true" />
+<param name="@videoPlayer" value="525758989002" />
+</object>
+
+<!-- 
+This script tag will cause the Brightcove Players defined above it to be created as soon
+as the line is read by the browser. If you wish to have the player instantiated only after
+the rest of the HTML is processed and the page load is complete, remove the line.
+-->
+<script type="text/javascript">brightcove.createExperiences();</script>
+<!-- End of Brightcove Player -->
+
+
+<h2>Video JS</h2>
+<video id="example_video_1" class="video-js vjs-default-skin"
+  controls preload="auto" width="580" height="264"
+  poster="http://video-js.zencoder.com/oceans-clip.png"
+  data-setup='{"example_option":true}'>
+<source src="http://brightcove04.brightcove.com/25/526524615002/526524615002_526519049002_110322-wasuregusa-.mp4" type='video/mp4' />
+</video>
+
+<h3>Youtube source</h3>
+<video id="example_video_2" class="video-js vjs-default-skin" controls preload="auto" width="640" height="360" data-setup='{ "techOrder": ["youtube"], "src": "http://www.youtube.com/watch?v=xjS6SftYQaQ&list=SPA60DCEB33156E51F" }'>
+</video>
+
+
+<script type="text/javascript">
+videojs("example_video_1", {}, function(){});
+videojs("example_video_2", {}, function(){});
+</script>
+
+</div>
+<hr>
+
+<footer>
+<p>&copy; Company 2012</p>
+</footer>
+
+</div> <!-- /container -->
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
+
+<script src="js/vendor/bootstrap.min.js"></script>
+
+<script src="js/main.js"></script>
+</body>
+</html>

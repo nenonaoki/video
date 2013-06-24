@@ -1,0 +1,81 @@
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+/* line 21, ../scss/video.scss */
+body {
+  margin: 0;
+  padding: 0;
+}
+
+/* line 25, ../scss/video.scss */
+#container {
+  width: 1200px;
+  margin: 0 auto;
+}
+
+/* line 29, ../scss/video.scss */
+#tv {
+  padding-top: 115px;
+  width: 1200px;
+  height: 794px;
+  background: url("../img/TV.jpg") no-repeat left top;
+}
+/* line 34, ../scss/video.scss */
+#tv > * {
+  margin: 0 auto;
+}
+
+/* line 38, ../scss/video.scss */
+#form {
+  width: 260px;
+  margin: -230px auto 0;
+  padding: 10px;
+  text-align: center;
+  background: #000;
+  -webkit-border-radius: 5px 5px;
+  -moz-border-radius: 5px / 5px;
+  border-radius: 5px / 5px;
+}
+/* line 47, ../scss/video.scss */
+#form input {
+  font-size: 16px;
+  padding: 3px;
+}
+/* line 51, ../scss/video.scss */
+#form input, #form button {
+  line-height: 20px;
+}
+
+/* line 55, ../scss/video.scss */
+#output {
+  position: relative;
+  z-index: 100;
+}
+
+/* line 59, ../scss/video.scss */
+.dialog {
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  padding: 20px;
+  border: 1px solid #999;
+  -webkit-border-radius: 10px 10px;
+  -moz-border-radius: 10px / 10px;
+  border-radius: 10px / 10px;
+  *zoom: 1;
+  filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FFFFFFFF', endColorstr='#FFE1E1E1');
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ffffff), color-stop(50%, #f1f1f1), color-stop(95%, #e1e1e1), color-stop(100%, #e1e1e1));
+  background-image: -webkit-linear-gradient(top, #ffffff 0%, #f1f1f1 50%, #e1e1e1 95%, #e1e1e1 100%);
+  background-image: -moz-linear-gradient(top, #ffffff 0%, #f1f1f1 50%, #e1e1e1 95%, #e1e1e1 100%);
+  background-image: -o-linear-gradient(top, #ffffff 0%, #f1f1f1 50%, #e1e1e1 95%, #e1e1e1 100%);
+  background-image: linear-gradient(top, #ffffff 0%, #f1f1f1 50%, #e1e1e1 95%, #e1e1e1 100%);
+  -webkit-box-shadow: 1px 1px 1px 1px rgba(127, 127, 127, 0.5);
+  -moz-box-shadow: 1px 1px 1px 1px rgba(127, 127, 127, 0.5);
+  box-shadow: 1px 1px 1px 1px rgba(127, 127, 127, 0.5);
+  -webkit-transition: opacity 0.3s ease-in-out;
+  -webkit-transition-delay: 0s;
+  -moz-transition: opacity 0.3s ease-in-out 0s;
+  -o-transition: opacity 0.3s ease-in-out 0s;
+  transition: opacity 0.3s ease-in-out 0s;
+  font-size: 30px;
+}

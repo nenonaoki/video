@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link href="http://localhost/projects/Video/css/video.css" rel="stylesheet">
+<link href="http://vjs.zencdn.net/4.0/video-js.css" rel="stylesheet">
+<script src="http://vjs.zencdn.net/4.0/video.js"></script>
+<script src="http://localhost/projects/Video/js/vendor/vjs.youtube.js"></script>
+</head>
+<body>
+<div id="container">
+<div id="output"></div>
+<div id="tv">
+
+<video id="example_video_1" class="video-js vjs-default-skin"
+  controls preload="auto" width="1050" height="555"
+  data-setup='{techOrder:["flash","html5"]}'>
+<source src="http://brightcove04.brightcove.com/25/526524615002/526524615002_526519049002_110322-wasuregusa-.mp4" type='video/mp4' />
+<!-- <source src="http://iphone-streaming.ustream.tv/ustreamVideo/nikkei-channel-business/streams/live/playlist.m3u8" type="video/mp4" /> -->
+<!-- <source src="http://www.youtube.com/watch?v=xjS6SftYQaQ&list=SPA60DCEB33156E51F" type="video/youtube" /> -->
+</video>
+</div>
+
+<form avtion="#" method="GET" id="form">
+<input id="message" type="text"><button id="send" type="submit">Say</button>
+</form>
+
+<!-- /#container --></div>
+
+<script>
+
+// http://iphone-streaming.ustream.tv/ustreamVideo/nikkei-channel-business/streams/live/playlist.m3u8
+// http://api.ustream.tv/json/channel/nikkei-channel-business/getInfo
+
+(function() {
+	var _left = true;
+	var _top = 0;
+	var _topMax = 8;
+
+	var ws = new WebSocket("ws://localhost:8888");
+	var output = document.getElementById('output');
+	var send = document.getElementById('send');
+	var form = document.getElementById('form');
+
+	function logObj(eventStr, msg) {
+		var _obj = document.createElement('div');
+		_obj.className = 'dialog';
+		// _obj.style = _style;
+		_obj.innerHTML = msg;
+
+		if(_left){
+			_obj.style.left =  0 + "px"; 
+		} else {
+			_obj.style.right = 0 + "px";
+		}
+
+		var top=100+ 75*_top;
+		_obj.style.top = top + "px";
+
+		_left = !_left;
+		if(_left) {
+			_top++;
+		}
+		if(_top === _topMax) {
+			_top = 0;
+		}
+		return _obj;
+	}
+
+	form.addEventListener('submit', function(e){
+		var msg = document.getElementById('message').value;
+		if(msg !== ""){
+			document.getElementById('message').value = "";	
+			ws.send(msg);
+		}
+		e.preventDefault();
+	});
+
+	ws.onmessage = function(e) {
+		var _item = logObj('recieved', e.data);
+		output.appendChild(_item);
+
+		setTimeout(function(){
+			_item.style.opacity = 1;
+		}, 100);
+		setTimeout(function(){
+			_item.style.opacity = 0;
+		}, 5000);
+		// output.innerHTML += logObj('recieved', e.data);
+	};
+
+	ws.onclose = function (e) {
+		// output.innerHTML += logStr('disconnect', e.code + ' - ' + e.type);
+	};
+}());
+</script>
+
+
+
+<script type="text/javascript">
+	videojs("example_video_1", {}, function(){});
+</script>
+</body>
+</html>
